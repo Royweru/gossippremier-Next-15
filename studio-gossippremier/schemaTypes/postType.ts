@@ -20,6 +20,11 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+     name:'excerpt',
+     title:'Excerpt',
+      type:"text",  
+    }),
+    defineField({
       name: 'publishedAt',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
@@ -40,5 +45,11 @@ export const postType = defineType({
       type: 'reference',
       to: [{type: 'category'}],
     }),
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{type: 'author'}],
+    })
   ],
 })

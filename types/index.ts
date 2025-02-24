@@ -16,7 +16,15 @@ export type PostType={
     category:{
         title:string
     },
+    author:{
+        name:string,
+        twitter?:string,
+        bio?:string,
+        image?:any
+        email:string
+    },
     mainImage:any;
     publishedAt:string;
+    excerpt:string;
     currentSlug:string;
 }

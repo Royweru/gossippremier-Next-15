@@ -6,7 +6,7 @@ export const EditorsPick = ({posts}:{
 }) => {
   return (
     <div className="mb-12">
-    <h2 className="text-3xl font-bold mb-6">Editors Pick</h2>
+    <h2 className="text-3xl font-bold mb-6">Editors Pick ⭐</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.slice(0, 3).map((post) => (
         <div key={post._id} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">

@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background: #f5f7fa;
 }
 
 
@@ -12,6 +13,9 @@ body {
   :root {
     --background: 0 0% 100%;
     --font-montserrat:"Montserrat", serif;
+    --color-primary: #2563eb;
+    --color-secondary: #9333ea;
+    --color-accent: #ec4899;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -80,3 +84,25 @@ body {
      transform: translateY(0)
  }
 }
+
+.sticky-nav {
+     animation: sticky-nav 300ms;
+}
+    
+@keyframes sticky-nav {
+    0% {
+        transform: translateY(-6em)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.shape-1 { animation: float 6s ease-in-out infinite; }
+.shape-2 { animation: float 8s ease-in-out infinite; }

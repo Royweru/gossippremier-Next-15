@@ -1,20 +1,24 @@
-import BentoGrid from "@/components/bento-grid";
+
+import { BlogSection1 } from "@/components/blogs-section1";
 import { CategoryGrid } from "@/components/category-grid";
 import { EditorsPick } from "@/components/editors-pick";
 import { FeaturedStories } from "@/components/featured";
 import { Hero } from "@/components/hero";
+import { NewsGrid } from "@/components/news-grid";
+import { Newsletter } from "@/components/newsletter";
 import { client } from "@/lib/sanity";
 import { PostType } from "@/types";
-import { type SanityDocument } from "next-sanity";
 
 const POSTS_QUERY = `*[
-  _type == "post"]|order(publishedAt desc)[0...3]{
+  _type == "post"]|order(publishedAt desc){
   _id, 
   title, 
   "currentSlug":slug.current,
   publishedAt,
   mainImage,
   category->{title},
+  author->{name, twitter, bio, image, email},
+  excerpt
   }`
   const options = { next: { revalidate: 30 } };
 
@@ -28,7 +32,15 @@ export default async function Home() {
         <FeaturedStories posts={posts}/>
         <EditorsPick posts={posts}/>
         <CategoryGrid posts={posts}/>
+        <Newsletter />   
       </div>
+      <NewsGrid posts={posts}/>
+      <BlogSection1 
+       blogPosts={posts}
+       tagline="Latest Posts"
+       heading="Topping the charts this week"
+       description=" The most popular posts on our platform this week. "
+      />
    </>
   );
 }

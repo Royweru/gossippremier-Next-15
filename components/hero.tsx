@@ -3,13 +3,15 @@ import { NavbarHero } from "./navbar-hero";
 
 export const Hero = () => {
   return (
-    <div
-      className="relative h-screen w-full bg-cover bg-center "
-      style={{ backgroundImage: "url(/hero3.webp)" }}
+    <div className=" space-y-4">
+      
+      <div
+      className="relative h-screen w-full bg-cover bg-center rounded-xl pt-2 lg:pt-4"
+      style={{ backgroundImage: "url(/hero.webp)" }}
     >
       <NavbarHero />
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-black/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from"></div>
 
       {/* Content */}
       <div className="relative z-10 flex lg:w-1/2 w-full   h-full flex-col items-start justify-center  text-white pl-4 lg:pl-12 pt-11">
@@ -40,5 +42,7 @@ export const Hero = () => {
   </div>
   <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-green-500/10 animate-pulse-slow"></div>
     </div>
+    </div>
+   
   );
 };

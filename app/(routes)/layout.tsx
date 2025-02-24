@@ -1,4 +1,5 @@
 
+import { Navbar } from '@/components/navbar'
 import React from 'react'
 
 const RoutesLayout = ({
@@ -8,7 +9,7 @@ const RoutesLayout = ({
 }) => {
   return (
      <div className=' relative min-h-screen w-full'>
-       
+         <Navbar />
           {children}
      </div>
   )
