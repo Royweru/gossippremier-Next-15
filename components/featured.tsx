@@ -75,9 +75,12 @@ export const FeaturedStories = ({posts}:{
             <span className="text-sm bg-sky-500/80 shadow-sm px-3 py-1 rounded-full text-white w-fit">
            {posts[1]?.category?.title || 'Technology'}
           </span>
-              <h2 className="md:text-base text-sm font-semibold">
+          <a href={`/blogs/${posts[1].currentSlug}`}>
+          <h2 className="md:text-base text-sm font-semibold hover:underline cursor-pointer">
                 {posts[1]?.title || '15 Shocking Elon Musk Tweets'}
               </h2>
+          </a>
+            
               <time className="text-gray-500 text-sm italic">
                 {new Date(posts[1].publishedAt).toLocaleDateString('en-us',{
                   year:'numeric',
@@ -108,9 +111,12 @@ export const FeaturedStories = ({posts}:{
             <span className="text-sm bg-pink-600/75 px-3 text-white py-1 rounded-full w-fit">
             {posts[2]?.category?.title || 'Technology'}
           </span>
-              <h2 className="md:text-base text-sm font-semibold ">
+          <a href={ `/blogs/${posts[2].currentSlug}`}>
+          <h2 className="md:text-base text-sm font-semibold cursor-pointer hover:underline ">
                 {posts[2]?.title || '15 Shocking Elon Musk Tweets'}
               </h2>
+          </a>
+             
               <time className="text-gray-500 text-sm italic">
                 {new Date(posts[1].publishedAt).toLocaleDateString('en-us',{
                   year:'numeric',
@@ -141,9 +147,11 @@ export const FeaturedStories = ({posts}:{
             <span className="text-sm bg-lime-500/80 px-3 py-1 rounded-full w-fit">
             {posts[3]?.category?.title || 'Technology'}
           </span>
-              <h2 className="md:text-base text-sm font-semibold">
-                {posts[3]?.title || '15 Shocking Elon Musk Tweets'}
+          <a href={ `/blogs/${posts[1].currentSlug}`}>
+          <h2 className="md:text-base text-sm font-semibold cursor-pointer hover:underline ">
+                {posts[1]?.title || '15 Shocking Elon Musk Tweets'}
               </h2>
+          </a>
               <time className="text-gray-500 text-sm italic">
                 {new Date(posts[1].publishedAt).toLocaleDateString('en-us',{
                   year:'numeric',

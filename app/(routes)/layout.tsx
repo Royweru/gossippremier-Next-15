@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
+import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
+import { TopHeader } from '@/components/top-header'
 import React from 'react'
 
 const RoutesLayout = ({
@@ -9,8 +12,10 @@ const RoutesLayout = ({
 }) => {
   return (
      <div className=' relative min-h-screen w-full'>
-         <Navbar />
+      <TopHeader />
+         {/* <Navbar /> */}
           {children}
+          <Footer />
      </div>
   )
 }

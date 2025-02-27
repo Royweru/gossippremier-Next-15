@@ -37,7 +37,7 @@ export const BlogSection1 = (props: Blog33Props) => {
     ...props,
   };
 
-  
+  const blogsLength = blogPosts.length
   return (
     <section  className=" py-12 md:py-16 lg:py-20  relative w-full ">
       <div className="max-w-5xl mx-auto relative">

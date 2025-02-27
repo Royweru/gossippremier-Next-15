@@ -1,13 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type blogPost ={
-    currentSlug:string,
-    title:string,
+export type IndividualPost ={
+    _id:string;
+    title:string;
     category:{
         title:string
     },
-    mainImage:any,
-    body:any,
-    publishedAt:string
+    author:{
+        name:string,
+        twitter?:string,
+        bio?:string,
+        image?:any
+        email:string
+    },
+    mainImage:any;
+    publishedAt:string;
+    excerpt:string;
+    currentSlug:string;
+    body:any;
 }
 
 export type PostType={

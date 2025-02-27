@@ -50,6 +50,16 @@ export default {
           200: "#D4A017",
           300: "#CDAF95",
         },
+		primary:{
+			DEFAULT:"#2563EB"
+		},
+		accents:{
+			gradientGray:"#F5F7FA",
+			electricBlur:"#00B4D8",
+			coralPink:"#FF6B6B",
+			limeGreen:"#90EE90",
+			charcoalBlack:"#333333",
+		}
       },
       borderRadius: {
         lg: "var(--radius)",

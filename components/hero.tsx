@@ -1,20 +1,31 @@
 import React from "react";
 import { NavbarHero } from "./navbar-hero";
+import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <div className=" space-y-4">
-      
-      <div
-      className="relative h-screen w-full bg-cover bg-center rounded-xl pt-2 lg:pt-4"
-      style={{ backgroundImage: "url(/hero.webp)" }}
-    >
+    <div className=" h-max w-full bg-cover bg-center rounded-b-md "  style={{ backgroundImage: "url(/bg-hero.jpg)" }}>
       <NavbarHero />
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-200 via-pink-300 to-indigo-300 opacity-20"/>
+      <div
+      className="relative h-full w-full flex md:flex-row  flex-col gap-4 justify-center "
+    
+    >
+      
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from"></div>
-
+      
+       <div className=" h-full flex items-end w-full justify-center">
+            <div className=" relative h-[300px] md:h-[400px] lg:h-[500px] w-full">
+                 <Image
+                   src={'/gal-bg2.png'}
+                   alt="Hero"
+                   fill
+                   className=" bg-cover bg-center"
+                   />
+            </div>
+       </div>
       {/* Content */}
-      <div className="relative z-10 flex lg:w-1/2 w-full   h-full flex-col items-start justify-center  text-white pl-4 lg:pl-12 pt-11">
+      <div className="relative flex  w-full  h-full flex-col items-start justify-center  text-white pl-4 lg:pl-12 pt-11">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
           Stay up to date with the latest updates
         </h1>
