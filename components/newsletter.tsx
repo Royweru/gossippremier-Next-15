@@ -2,11 +2,14 @@
 // components/Newsletter.jsx// components/Newsletter.jsx
 export function Newsletter() {
     return (
-      <div className="grid md:grid-cols-2 gap-8 my-16">
+      
+      <div className="w-full  rounded-3xl flex lg:flex-row flex-col
+       gap-4 relative bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90">
+        {/* <div className=" inset-0 bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90" /> */}
         {/* Left Box - Visual Appeal */}
-        <div className="relative p-8 rounded-3xl overflow-hidden">
+        <div className="relative p-6  overflow-hidden ">
           {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90" />
+         
           
           {/* Abstract Shapes */}
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-pink-200/20 rounded-full blur-2xl" />
@@ -31,7 +34,7 @@ export function Newsletter() {
         </div>
   
         {/* Right Box - Subscription Form */}
-        <div className="bg-white p-8 rounded-3xl shadow-lg">
+        <div className="relative overflow-hidden p-6">
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
             Join Our Newsletter
           </h3>

@@ -37,9 +37,12 @@ export const FeaturedStories = ({posts}:{
         )}
         
         <div className="relative p-8 h-full flex flex-col justify-end text-white">
-          <span className="text-sm bg-zinc-700/90 text-white shadow-sm px-3 py-1 rounded-full w-fit">
+          <a href={`/blogs/${posts[0].currentSlug}`}>
+          <span className="text-sm bg-zinc-700/90 text-white shadow-sm px-3 py-1 rounded-full w-fit hover:underline cursor-pointer">
             {posts[0].category.title}
           </span>
+          </a>
+        
           <h1 className="text-4xl font-bold mt-2 mb-4">
             {posts[0].title || 'Want a Career in Technology?'}
           </h1>

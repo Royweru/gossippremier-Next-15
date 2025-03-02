@@ -1,5 +1,6 @@
 
 import { BlogSection1 } from "@/components/blogs-section1";
+import { BlogSection2 } from "@/components/blog-section2";
 import { CategoryGrid } from "@/components/category-grid";
 import { EditorsPick } from "@/components/editors-pick";
 import { FeaturedStories } from "@/components/featured";
@@ -8,6 +9,7 @@ import { NewsGrid } from "@/components/news-grid";
 import { Newsletter } from "@/components/newsletter";
 import { client } from "@/lib/sanity";
 import { PostType } from "@/types";
+import { MustRead } from "@/components/must-read";
 
 const POSTS_QUERY = `*[
   _type == "post"]|order(publishedAt desc){
@@ -41,6 +43,10 @@ export default async function Home() {
        heading="Topping the charts this week"
        description=" The most popular posts on our platform this week. "
       />
+      <BlogSection2
+       posts= {posts}
+      />
+      <MustRead posts={posts}/>
    </>
   );
 }
