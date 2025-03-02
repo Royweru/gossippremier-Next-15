@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import { urlFor } from "@/app/(routes)/blogs/[slug]/page";
+import { urlFor } from "@/lib/sanity";
 import { PostType } from "@/types";
 import { url } from "inspector";
 

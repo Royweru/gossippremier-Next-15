@@ -30,7 +30,7 @@ export default async function Home() {
   return (
    <>
     <Hero />
-    <div className="max-w-5xl mx-auto  py-8 md:px-0 px-4">
+    <div className="max-w-5xl mx-auto  py-8 md:px-5 lg:px-0 px-4">
         <FeaturedStories posts={posts}/>
         <EditorsPick posts={posts}/>
         <CategoryGrid posts={posts}/>

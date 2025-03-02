@@ -1,8 +1,6 @@
 
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { client } from "@/lib/sanity";
 
+import { client } from "@/lib/sanity";
 import { MainArticle } from "@/components/blog-page/main-article";
 import { IndividualPost } from "@/types";
 import { Sidebar } from "@/components/blog-page/sidebar";
@@ -18,11 +16,6 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
 }`;
 ;
 
-const { projectId, dataset } = client.config();
-export const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
 
 const options = { next: { revalidate: 30 } };
 

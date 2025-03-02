@@ -1,5 +1,5 @@
 "use client"
-import { urlFor } from '@/app/(routes)/blogs/[slug]/page'
+import { urlFor } from '@/lib/sanity'
 import { PostType } from '@/types'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'

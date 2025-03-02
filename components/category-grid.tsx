@@ -2,7 +2,7 @@ import { PostType } from '@/types'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { urlFor } from '@/app/(routes)/blogs/[slug]/page'
+import { urlFor } from '@/lib/sanity'
 
 export const CategoryGrid = ({posts}:{
     posts:PostType[]

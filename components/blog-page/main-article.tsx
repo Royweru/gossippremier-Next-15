@@ -2,14 +2,14 @@ import { IndividualPost} from '@/types'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { urlFor } from '@/app/(routes)/blogs/[slug]/page'
+import { urlFor } from '@/lib/sanity'
 import { PortableText } from 'next-sanity'
 export const MainArticle = ({post}:{
     post:IndividualPost
 }) => {
     const postImageUrl = post.mainImage
-    ? urlFor(post.mainImage)?.url()
-    : null;
+    && urlFor(post.mainImage)?.url()
+    
   return (
     <article className="lg:w-2/3 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
     <div className="my-2 lg:my-4">
