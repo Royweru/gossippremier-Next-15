@@ -1,4 +1,4 @@
-import { urlFor } from "@/app/(routes)/blogs/[slug]/page";
+import { urlFor } from "@/lib/sanity";
 import { PostType } from "@/types";
 import Image from "next/image";
 import React from "react";
