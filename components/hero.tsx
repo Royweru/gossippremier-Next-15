@@ -31,7 +31,7 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
           Stay up to date with the latest updates
         </h1>
-        <p className="text-base md:text-lg mb-6 text-neutral-800 font-montserrat max-w-md font-semibold leading-relaxed">
+        <p className="text-base md:text-lg mb-6 text-neutral-200 font-montserrat max-w-md font-semibold leading-relaxed">
           Explore cutting-edge innovations that shape our world
         </p>
         <button className="bg-purple-400 hover:bg-purple-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300">

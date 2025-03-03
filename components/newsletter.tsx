@@ -13,7 +13,7 @@ export function Newsletter() {
           
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left Side - Header Section */}
-        <div className="text-white md:w-1/2 w-full space-y-5">
+        <div className="text-white md:w-1/2 w-full space-y-5 p-6">
           <h2 className="text-4xl font-bold mb-4">Stay Informed</h2>
           <p className="text-base font-montserrat max-w-md leading-relaxed">
           Get exclusive insights and updates

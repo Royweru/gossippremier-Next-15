@@ -76,9 +76,10 @@ export const BlogSection1 = (props: Blog33Props) => {
               <a href={`/blogs/${post.currentSlug}`} className="mb-2 block max-w-full">
                 <h5 className="text-xl font-bold md:text-2xl">{post.title}</h5>
               </a>
-              <p>{post.excerpt
+              <p>
+                {post.excerpt
                 ||'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Nullam sit amet nisi nec nunc ultricies ultricies. Nullam sit amet nisi nec nunc ultricies ultricies.'
-                } 
+                }
               </p>
               <div className="mt-6 flex items-center">
                 <div className="mr-4 shrink-0">

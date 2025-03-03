@@ -27,7 +27,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
           {posts[0].mainImage && (
             <>
               <img
-                src={postImageUrl1 || "/image.png"}
+                src={ "/entertainment2.jpg"}
                 alt={posts[0].title}
                 className="object-cover w-full h-full absolute -z-10"
               />
@@ -63,13 +63,13 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
  {/*Right side , second set of  blogs*/}
 
         <div className="space-y-4 relative">
-          
+
             {/*First blog*/}
           <div className="  flex h-32 items-center gap-x-2 justify-between w-full ">
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
               {posts[1]?.mainImage && (
           <Image
-            src={urlFor(posts[1].mainImage)?.url() || "/image.png"}
+            src={ "/science3.jpg"}
             alt={posts[1].title}
             fill
             style={{ objectFit: "cover" }}
@@ -81,6 +81,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             <div className="relative p-1.5 h-full flex w-full flex-col justify-between  text-gray-900">
               <span className="text-sm bg-sky-500/80 shadow-sm px-3 py-1 rounded-full text-white w-fit">
           {posts[1]?.category?.title || "Technology"}
+        
               </span>
               <a href={`/blogs/${posts[1].currentSlug}`}>
           <h2 className="md:text-base  text-sm font-semibold hover:underline cursor-pointer">
@@ -139,7 +140,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
               {posts[3]?.mainImage && (
           <Image
-            src={urlFor(posts[3]?.mainImage)?.url() || "/image.png"}
+            src={ "/finance2.jpg"}
             alt={posts[3].title}
             fill
             style={{ objectFit: "cover" }}
