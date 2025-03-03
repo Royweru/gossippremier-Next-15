@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { urlFor } from "@/lib/imageBuilder";
 import { PostType } from "@/types";
 import Image from "next/image";
@@ -24,11 +25,11 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         {/*Right side , first blog*/}
         <div className="relative  rounded-3xl overflow-hidden">
-          {posts[0].mainImage && (
+          {posts[5].mainImage && (
             <>
               <img
                 src={ "/entertainment2.jpg"}
-                alt={posts[0].title}
+                alt={posts[1].title}
                 className="object-cover w-full h-full absolute -z-10"
               />
               {/* Gradient Overlay */}
@@ -38,12 +39,12 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
 
           <div className="relative p-8 h-full flex flex-col justify-end text-white">
               <span className="text-sm bg-zinc-700/90 text-white shadow-sm px-3 py-1 rounded-full w-fit ">
-                {posts[0].category.title}
+                {posts[1].category.title}
               </span>
            
             <a href={`/blogs/${posts[0].currentSlug}`}>
             <h1 className="text-4xl font-bold mt-2 mb-4 hover:underline cursor-pointer">
-              {posts[0].title || "Want a Career in Technology?"}
+              {posts[1].title || "Want a Career in Technology?"}
             </h1>
             </a>
 
@@ -67,7 +68,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             {/*First blog*/}
           <div className="  flex h-32 items-center gap-x-2 justify-between w-full ">
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
-              {posts[1]?.mainImage && (
+              {posts[4]?.mainImage && (
           <Image
             src={ "/science3.jpg"}
             alt={posts[1].title}
@@ -80,12 +81,12 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
 
             <div className="relative p-1.5 h-full flex w-full flex-col justify-between  text-gray-900">
               <span className="text-sm bg-sky-500/80 shadow-sm px-3 py-1 rounded-full text-white w-fit">
-          {posts[1]?.category?.title || "Technology"}
+          {posts[3]?.category?.title || "Technology"}
         
               </span>
               <a href={`/blogs/${posts[1].currentSlug}`}>
           <h2 className="md:text-base  text-sm font-semibold hover:underline cursor-pointer">
-            {posts[1]?.title?.slice(0, 50) ||
+            {posts[3]?.title?.slice(0, 50) ||
               "15 Shocking Elon Musk Tweets"}
           </h2>
               </a>
@@ -105,7 +106,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
               {posts[2]?.mainImage && (
           <Image
-            src={urlFor(posts[2].mainImage)?.url() || "/image.png"}
+            src={'/lifestyle2.jpg'}
             alt={posts[2].title}
             fill
             style={{ objectFit: "cover" }}

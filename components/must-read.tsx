@@ -14,7 +14,7 @@ export const MustRead = ({ posts }: { posts: PostType[] }) => {
                  Must read
              </h3>
             </div>
-          {posts.slice(0, 3).map((post) => (
+          {posts.slice(3, 6).map((post) => (
             <MustReadCard key={post._id} data={post} />
           ))}
         </div>

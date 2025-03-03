@@ -72,13 +72,14 @@ export const TopHeader = () => {
         </div>
         <div className="lg:flex gap-x-4 items-center hidden">
           <a href="/podcast">
-            <button className="py-2 bg-transparent hover:bg-neutral-400/90 cursor-pointer border-none text-white font-semibold px-3.5 flex items-center justify-center gap-x-2">
+            <button className="py-2 rounded-xl bg-transparent hover:bg-neutral-700/90 cursor-pointer border-none text-white font-semibold px-3.5 flex items-center justify-center gap-x-2">
               <HeadphonesIcon className="size-4 text-white font-bold" />
               <span className="italic">Listen</span>
             </button>
           </a>
           <a href="/watch">
-            <button className="py-2 bg-transparent hover:bg-neutral-400/90 cursor-pointer border-none text-white font-semibold px-3.5 flex items-center justify-center gap-x-2">
+            <button className="py-2 bg-transparent rounded-xl hover:bg-neutral-700/90 cursor-pointer border-none text-white font-semibold px-3.5 flex items-center justify-center gap-x-2">
+            <Tv2Icon className="size-4 text-white font-bold" />
               <span className="italic">Watch</span>
             </button>
           </a>
