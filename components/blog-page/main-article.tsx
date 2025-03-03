@@ -2,7 +2,7 @@ import { IndividualPost} from '@/types'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { urlFor } from '@/lib/sanity'
+import { urlFor } from '@/lib/imageBuilder'
 import { PortableText } from 'next-sanity'
 export const MainArticle = ({post}:{
     post:IndividualPost

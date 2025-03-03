@@ -25,28 +25,29 @@ export const StayConnected = () => {
         <h4 className=' lg:text-2xl md:text-xl text-lg text-accents-charcoalBlack'>
          Stay connected
         </h4>
-        <div className=' w-full flex justify-between items-center'>
+        <div className='w-full flex justify-between items-center'>
            {socialmedia.map((platform,idx)=>(
             <div 
              key={idx}
-             className=' flex flex-col items-center w-full space-y-1'
+             className='flex flex-col items-center w-full space-y-1'
             >
-            <div className='relative lg:size-32 md:size-28 sm:size-16 size-12'>
+            <div className='relative w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]'>
              <Image
               src={platform.imageSrc}
               alt={platform.name}
-              className=' bg-cover bg-center'
+              className='object-contain'
               fill
+              sizes="(max-width: 640px) 30px, (max-width: 768px) 40px, (max-width: 1024px) 50px, 60px"
               />
             </div>
-            <div className=' w-full flex flex-col items-center gap-y-2'>
-              <h5 className=' text-base font-semibold'>
+            <div className='w-full flex flex-col items-center gap-y-1 md:gap-y-2'>
+              <h5 className='text-sm sm:text-base font-semibold'>
                {platform.name}
               </h5>
-              <p className=' text-sm font-normal'>
-                 {platform.fans.toLocaleString('en-US')} <span className=' ml-2 text-accents-electricBlur'>
-                    fans
-                 </span>
+              <p className='text-xs sm:text-sm font-normal'>
+             {platform.fans.toLocaleString('en-US')} <span className='ml-2 text-accents-electricBlur'>
+            fans
+             </span>
               </p>
             </div>
             </div>

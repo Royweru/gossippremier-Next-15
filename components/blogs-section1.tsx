@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import { urlFor } from "@/lib/sanity";
+import { urlFor } from "@/lib/imageBuilder";
 import { PostType } from "@/types";
-import { url } from "inspector";
+
 
 type ImageProps = {
   src: string;
@@ -43,7 +43,8 @@ export const BlogSection1 = (props: Blog33Props) => {
       <div className="max-w-5xl mx-auto relative">
         <div className="lg:mb-10 md:mb-8 mb-6">
           <div className="mx-auto w-full  text-center">
-            <h2 className="rb-5 mb-5 text-3xl font-bold md:mb-6 tracking-tight md:text-5xl lg:text-6xl text-indigo-600">
+            <h2 className="rb-5 mb-5 text-2xl font-bold md:mb-6 
+            tracking-tight md:text-5xl lg:text-6xl  text-accents-coralPink">
               {heading}
             </h2>
             <p className="  text-neutral-800/75">{description}</p>
@@ -59,9 +60,9 @@ export const BlogSection1 = (props: Blog33Props) => {
               <a href={`/blogs/${post.currentSlug}`} className="mb-6 inline-block w-full max-w-full">
                 <div className="w-full overflow-hidden">
                   <img
-                    src={articleMainImageUrl}
-                    alt={post.title}
-                    className="aspect-[3/2] size-full object-cover"
+                  src={articleMainImageUrl}
+                  alt={post.title}
+                  className="aspect-video size-full object-cover"
                   />
                 </div>
               </a>

@@ -1,4 +1,4 @@
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/imageBuilder';
 import { PostType } from '@/types';
 import React from 'react';
 

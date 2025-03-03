@@ -14,16 +14,18 @@ export const Hero = () => {
       
       {/* Gradient Overlay */}
       
-       <div className=" h-full flex items-end w-full justify-center">
-            <div className=" relative h-[300px] md:h-[400px] lg:h-[500px] w-full">
-                 <Image
-                   src={'/gal-bg2.png'}
-                   alt="Hero"
-                   fill
-                   className=" bg-cover bg-center"
-                   />
-            </div>
-       </div>
+      <div className="h-full flex items-end w-full justify-center">
+           <div className="relative w-full max-w-2xl aspect-[3/3]">
+           <Image
+         src={'/gal-bg2.png'}
+         alt="Hero"
+         fill
+         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+         className="object-cover "
+        
+         />
+           </div>
+      </div>
       {/* Content */}
       <div className="relative flex  w-full  h-full flex-col items-start justify-center  text-white pl-4 lg:pl-12 pt-11">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">

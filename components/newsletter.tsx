@@ -1,84 +1,85 @@
 "use client"
+
+import { MailIcon } from "lucide-react";
+
 // components/Newsletter.jsx// components/Newsletter.jsx
 export function Newsletter() {
     return (
-      
-      <div className="w-full  rounded-3xl flex lg:flex-row flex-col
-       gap-4 relative bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90">
-        {/* <div className=" inset-0 bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90" /> */}
-        {/* Left Box - Visual Appeal */}
-        <div className="relative p-6  overflow-hidden ">
-          {/* Gradient Background */}
-         
-          
-          {/* Abstract Shapes */}
+      <div className="w-full max-w-5xl mx-auto lg:px-0 md:px-3 px-4 lg:mb-10 mt-4 md:mb-8 mb-6">
+        <div className="w-full rounded-3xl p-8 relative bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90">
+          {/* Abstract Shapes for visual interest */}
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-pink-200/20 rounded-full blur-2xl" />
           <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-blue-200/20 rounded-full blur-2xl" />
           
-          {/* Content */}
-          <div className="relative z-10 text-white">
-            <h2 className="text-4xl font-bold mb-4">Stay Informed</h2>
-            <p className="text-lg mb-6">
-              Get exclusive insights and updates delivered straight to your inbox
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                ✉️
-              </div>
-              <div>
-                <p className="font-medium">Weekly Digest</p>
-                <p className="text-sm opacity-80">Every Friday morning</p>
-              </div>
-            </div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Left Side - Header Section */}
+        <div className="text-white md:w-1/2 w-full space-y-5">
+          <h2 className="text-4xl font-bold mb-4">Stay Informed</h2>
+          <p className="text-base font-montserrat max-w-md leading-relaxed">
+          Get exclusive insights and updates
+          delivered straight to your inbox
+          </p>
+          <div className=" flex items-center gap-x-4">
+               <div className="p-5 bg-[#d297ed] rounded-full flex items-center justify-center">
+                  <MailIcon className=" size-8 "/>
+               </div>
+               <div className="flex flex-col space-y-2">
+               <h4 className=" text-xl md:text-2xl font-semibold font-montserrat">
+          Weekly digest
+               </h4>
+               <p className=" text-base">
+                Every Friday morning
+               </p>
+               </div>
           </div>
         </div>
-  
-        {/* Right Box - Subscription Form */}
-        <div className="relative overflow-hidden p-6">
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">
-            Join Our Newsletter
-          </h3>
-          
+
+        {/* Right Side - Subscription Form */}
+        <div className="md:w-1/2 w-full   p-6">
           <form className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="you@example.com"
-                />
-              </div>
+          <label htmlFor="email" className="block text-sm font-medium text-white">
+            Email address
+          </label>
+          <div className="mt-1">
+            <input
+              type="email"
+              id="email"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="you@example.com"
+            />
+          </div>
             </div>
-  
+
             <div>
-              <label htmlFor="interests" className="block text-sm font-medium text-gray-700">
-                Your Interests
+          <label className="block text-sm font-medium text-white mb-2">
+            Your Interests
+          </label>
+          <div className="grid grid-cols-2 gap-3">
+            {['Technology', 'Stock Market', 'Politics', 'Health'].map((interest) => (
+              <label key={interest} className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
+            />
+            <span className="text-white">{interest}</span>
               </label>
-              <div className="mt-1 grid grid-cols-2 gap-3">
-                {['Technology', 'Stock Market', 'Politics', 'Health'].map((interest) => (
-                  <label key={interest} className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
-                    />
-                    <span className="text-gray-700">{interest}</span>
-                  </label>
-                ))}
-              </div>
+            ))}
+          </div>
             </div>
-  
+
             <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+          type="submit"
+          className="w-full bg-white text-purple-600 py-3 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium"
             >
-              Subscribe Now
+          Subscribe Now
             </button>
           </form>
+          </div>
         </div>
-      </div>
+          </div>
+        </div>
+     
+      
     );
   }
