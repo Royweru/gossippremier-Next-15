@@ -14,12 +14,13 @@ export const BlogSectionCard = ({
     if(!data) return
   return (
     <div className=' md:space-y-4 space-y-3'>
-        <div className=' w-full relative h-[290px] md:h-[320px] lg:h-[350px] mt-4'>
+        <div className=' w-full relative h-[200px] md:h-[250px] lg:h-[300px] mt-4'>
              <Image
                src={data.mainImage&&urlFor(data.mainImage)?.url()}
-               alt=''
-               className=' bg-contain '
+               alt={data.title}
+               className=' object-cover rounded-md'
                fill
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                />
         </div>
         <div className=' pl-1' onClick={()=>router.push(`/categories/${data.category.title}`)}>

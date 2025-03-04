@@ -19,7 +19,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
   //   ? urlFor(posts[3].mainImage)?.url()
   //   : null;
   return (
-    <div className=" max-w-5xl lg:px-0 md:px-3 px-2 mx-auto ">
+    <div className=" max-w-6xl lg:px-0 md:px-3 px-2 mx-auto ">
       <SectionHeader title="Featured posts" />
 
       <div className="grid md:grid-cols-2 gap-6 mb-12">

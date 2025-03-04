@@ -40,7 +40,7 @@ export const BlogSection1 = (props: Blog33Props) => {
   const blogsLength = blogPosts.length
   return (
     <section  className=" py-12 md:py-16 lg:py-20  relative w-full ">
-      <div className="max-w-5xl mx-auto relative">
+      <div className="max-w-6xl mx-auto relative">
         <div className="lg:mb-10 md:mb-8 mb-6">
           <div className="mx-auto w-full  text-center">
             <h2 className="rb-5 mb-5 text-2xl font-bold md:mb-6 
@@ -70,14 +70,14 @@ export const BlogSection1 = (props: Blog33Props) => {
             href={`/blogs/${post.currentSlug}`}
                 className="mb-2 mr-4 inline-block max-w-full text-sm font-semibold"
               >
-                {post.category.title}
+                {post.category.title.slice(0,50)}
               </a>
 
               <a href={`/blogs/${post.currentSlug}`} className="mb-2 block max-w-full">
                 <h5 className="text-xl font-bold md:text-2xl">{post.title}</h5>
               </a>
               <p>
-                {post.excerpt
+                {post.excerpt.slice(0,80)
                 ||'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Nullam sit amet nisi nec nunc ultricies ultricies. Nullam sit amet nisi nec nunc ultricies ultricies.'
                 }
               </p>
