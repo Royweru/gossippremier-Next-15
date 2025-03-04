@@ -5,9 +5,9 @@ export const EditorsPick = ({posts}:{
     posts:PostType[]
 }) => {
   return (
-    <div className="md:mb-12 sm:mb-10 mb-8 max-w-5xl mx-auto lg:px-0 md:px-3 px-4 ">
+    <div className="md:mb-12 sm:mb-10 mb-8 max-w-6xl mx-auto lg:px-0 md:px-3 px-4 ">
     <h2 className="text-3xl font-bold mb-6">Editors Pick ⭐</h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-8 md:px-6 px-4 ">
       {posts.slice(0, 3).map((post) => (
         <div key={post._id} className="bg-white shadow-sm p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
           <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">⭐ Editors Pick</span>
