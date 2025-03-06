@@ -39,12 +39,12 @@ export const BlogSection1 = (props: Blog33Props) => {
 
   const blogsLength = blogPosts.length
   return (
-    <section  className=" py-6 md:py-10 lg:py-12  relative w-full ">
-      <div className="max-w-6xl mx-auto relative">
+    <section  className=" py-6 md:py-10 lg:py-12   relative w-full ">
+      <div className="max-w-6xl mx-auto relative lg:px-0 md:px-3 px-2">
         <div className="lg:mb-10 md:mb-8 mb-6">
           <div className="mx-auto w-full  text-center">
-            <h2 className="rb-5 mb-5 text-xl font-bold md:mb-6 
-            tracking-tight md:text-2xl lg:text-4xl  text-accents-electricBlur">
+            <h2 className="rb-5 mb-5  font-bold md:mb-6 
+            tracking-tight text-2xl lg:text-4xl  text-accents-electricBlur">
               {heading}
             </h2>
             <p className="  text-neutral-800/75">{description}</p>

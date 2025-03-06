@@ -7,10 +7,15 @@ import Link from 'next/link'
 export const MobileNavHero = () => {
 
   return (
-    <div className='md:hidden relative w-full flex justity-end items-center'>
+    <div className='md:hidden relative w-full flex justity-between items-center'>
+      <div className=' font-semibold'>
+         <h4 className='text-3xl'>
+          Gossipremier
+         </h4>
+      </div>
       <Sheet>
         <SheetTrigger>
-        <MenuIcon className=' size-7 text-neutral-100 cursor-pointer'/>
+        <MenuIcon className=' size-10 text-neutral-100 cursor-pointer font-bold'/>
         </SheetTrigger>
         <SheetContent side={"left"}>
            <div className=' h-full flex flex-col gap-y-4'>
@@ -29,7 +34,7 @@ export const MobileNavHero = () => {
            </div>
         </SheetContent>
       </Sheet>
-
+      
     </div>
   )
 }

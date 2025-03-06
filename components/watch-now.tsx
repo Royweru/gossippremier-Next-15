@@ -22,12 +22,12 @@ export const WatchNowSection = () => {
           <div className="lg:col-span-2 relative rounded-lg overflow-hidden group">
             <video
               src="/video1.mp4" // Replace with your actual video source
-              className="w-full h-5/6 object-cover"
+              className="w-full  md:h-5/6 object-cover"
               controls // Add video controls
             />
             <div className="relative flex flex-col justify-end p-4">
               <div className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded w-fit mb-2">NEWS</div>
-              <h3 className="text-2xl font-bold mb-4">Is Shopping Second Hand Still a Sustainable Option?</h3>
+              <h3 className="lg:text-2xl md:text-xl text-lg font-bold mb-4">Is Shopping Second Hand Still a Sustainable Option?</h3>
             </div>
           </div>
           {/* Side Videos */}

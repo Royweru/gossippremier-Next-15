@@ -14,7 +14,7 @@ export const MustRead = ({ posts }: { posts: PostType[] }) => {
   const remainingPosts = posts.slice(4, 6);
 
   return (
-    <section className="w-full px-4 lg:px-0 max-w-6xl mx-auto py-12 md:py-16">
+    <section className="w-full lg:px-0 md:px-3 px-2 max-w-6xl mx-auto py-12 md:py-16">
       {/* Section Header with stylish accent */}
       <div className="flex items-center mb-8 gap-x-4">
         <h2 className="text-3xl font-bold text-neutral-900">Must Read</h2>

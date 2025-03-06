@@ -12,7 +12,7 @@ export const NewsGrid = ({ posts }: { posts: PostType[] }) => {
   const displayPosts = posts.slice(0, Math.min(posts.length, 6));
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-5 sm:px-4 lg:px-0 mb-8 lg:mb-12">
+    <div className="w-full max-w-6xl mx-auto lg:px-0 md:px-3 px-2 sm:px-4  mb-8 lg:mb-12">
       {/* Header Section */}
       <div className="flex justify-between items-center border-b border-gray-200 pb-4 mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Latest Stories</h2>

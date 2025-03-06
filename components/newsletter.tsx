@@ -5,7 +5,7 @@ import { MailIcon } from "lucide-react";
 // components/Newsletter.jsx// components/Newsletter.jsx
 export function Newsletter() {
     return (
-      <div className="w-full max-w-6xl mx-auto lg:px-0 md:px-3 px-4 lg:mb-10 md:mb-8 mb-6">
+      <div className="w-full max-w-6xl mx-auto lg:px-0 md:px-3 px-2 lg:mb-10 md:mb-8 mb-6">
         <div className="w-full rounded-3xl p-8 relative bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 opacity-90">
           {/* Abstract Shapes for visual interest */}
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-pink-200/20 rounded-full blur-2xl" />

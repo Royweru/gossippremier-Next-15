@@ -3,7 +3,7 @@ import {  Lock, Clock, Eye, MessageSquare } from 'lucide-react';
 
 export const Trending = () => {
   return (
-    <div className=" lg:py-10 md:py-8 py-6 lg:px-0 md:px-4 px-5">
+    <div className=" lg:py-10 md:py-8 py-6 lg:px-0 md:px-3 px-2">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Main Content - 3 columns wide */}
         <div className="lg:col-span-3 space-y-8">
