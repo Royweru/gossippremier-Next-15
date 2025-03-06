@@ -1,7 +1,7 @@
 import { BlogSection1 } from "@/components/blogs-section1";
 import { BlogSection2 } from "@/components/blog-section2";
 import { CategoryGrid } from "@/components/category-grid";
-import { EditorsPick } from "@/components/editors-pick";
+
 import { FeaturedStories } from "@/components/featured";
 import HeroSection from "@/components/hero";
 import { NewsGrid } from "@/components/news-grid";
