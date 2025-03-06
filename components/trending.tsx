@@ -12,7 +12,7 @@ export const Trending = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 flex flex-col justify-center">
                 <div className="flex items-center mb-4">
-                  <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded">FASHION</span>
+                  <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded">CULTURE</span>
                   <div className="flex items-center ml-3 text-gray-500 text-xs">
                     <Lock size={14} className="mr-1" />
                     <span>FOR SUBSCRIBERS</span>
@@ -26,7 +26,7 @@ export const Trending = () => {
                 <div className="flex items-center text-gray-500 text-sm mb-4">
                   <Clock size={16} className="mr-1" />
                   <span className="mr-3">August 20, 3:21 PM</span>
-                  <span className="mr-3">by <span className="font-medium text-gray-700">CMSMASTERS</span></span>
+                  <span className="mr-3">by <span className="font-medium text-gray-700">Roy Weru</span></span>
                 </div>
                 
                 <p className="text-gray-600">
@@ -36,7 +36,7 @@ export const Trending = () => {
               
               <div className="bg-teal-800 h-full">
                 <img 
-                  src="/api/placeholder/500/400" 
+                  src="/culture1.jpg" 
                   alt="Fashion blogger with pink phone" 
                   className="w-full h-full object-cover"
                 />
@@ -49,7 +49,7 @@ export const Trending = () => {
             {/* Article 1 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <img 
-                src="/api/placeholder/400/250" 
+                src="/business1.jpg" 
                 alt="Fashion House NFT Projects" 
                 className="w-full h-48 object-cover"
               />
@@ -61,7 +61,7 @@ export const Trending = () => {
             {/* Article 2 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <img 
-                src="/api/placeholder/400/250" 
+                src="/celebrity1.jpg" 
                 alt="Life without Waste" 
                 className="w-full h-48 object-cover"
               />
@@ -73,7 +73,7 @@ export const Trending = () => {
             {/* Article 3 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <img 
-                src="/api/placeholder/400/250" 
+                src="/entertainment3.jpg" 
                 alt="Michael Kors Campaign" 
                 className="w-full h-48 object-cover"
               />

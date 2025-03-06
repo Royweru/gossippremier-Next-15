@@ -20,7 +20,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
   //   : null;
   return (
     <div className=" max-w-6xl lg:px-0 md:px-3 px-2 mx-auto ">
-      <SectionHeader title="Featured posts" />
+      <SectionHeader title="Editors pick" />
 
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         {/*Right side , first blog*/}

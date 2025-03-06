@@ -10,6 +10,7 @@ import { client } from "@/lib/sanity";
 import { PostType } from "@/types";
 import { MustRead } from "@/components/must-read";
 import { Trending } from "@/components/trending";
+import { WatchNowSection } from "@/components/watch-now";
 
 const POSTS_QUERY = `*[
   _type == "post"]|order(publishedAt desc){
@@ -32,10 +33,8 @@ export default async function Home() {
       <HeroSection />
       <Trending />
       <FeaturedStories posts={posts} />
-      <EditorsPick posts={posts} />
       <CategoryGrid posts={posts} />
       <Newsletter />
-
       <NewsGrid posts={posts} />
       <BlogSection1
         blogPosts={posts}
@@ -44,6 +43,7 @@ export default async function Home() {
         description=" The most popular posts on our platform this week. "
       />
       <BlogSection2 posts={posts} />
+       <WatchNowSection />
       <MustRead posts={posts} />
     </>
   );

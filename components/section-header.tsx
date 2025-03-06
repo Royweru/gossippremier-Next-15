@@ -5,11 +5,11 @@ export const SectionHeader = ({
     title:string
 }) => {
   return (
-    <div className=' my-3 flex flex-col w-full gap-y-2'>
-        <h2 className='lg:text-4xl text-2xl font-semibold text-gray-900'>
-            {title}
-             </h2>
-    <div className=' h-[1.5px] bg-neutral-800/95 w-1/2'/>
-    </div>
+<div className="flex justify-between items-center border-b border-gray-200 pb-4 mb-8">
+        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+        <a href="/news" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+          View More
+        </a>
+      </div>
   )
 }
