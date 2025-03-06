@@ -1,66 +1,81 @@
-"use client"
+"use client";
 
-import { MobileNavHero } from "./mobile-nav-hero"
+import { ExtraSheet } from "./extra-sheet";
+import { MobileNavHero } from "./mobile-nav-hero";
 
 // import { useEffect, useRef, useState } from 'react'
 
-
 // Add this style to your css file
-export const navigation =[
+export const navigation = [
   {
-    name:'Home',
-    href:'#'
+    name: "Home",
+    href: "#",
   },
   {
-    name:'latest',
-    href:'#'
+    name: "latest",
+    href: "#",
   },
   {
-    name:'Finance',
-    href:'#'
+    name: "Finance",
+    href: "#",
   },
   {
-    name:'Technology',
-    href:'#'
+    name: "Technology",
+    href: "#",
   },
   {
-    name:'Sports',
-    href:'#'
+    name: "Sports",
+    href: "#",
   },
   {
-    name:'Science',
-    href:'#'
+    name: "Science",
+    href: "#",
   },
   {
-    name:'About',
-    href:'#'
+    name: "About",
+    href: "#",
   },
-]
+];
 
-
-export const NavbarHero =  () => {
-
-
-
-  
-
+export const NavbarHero = () => {
   return (
-    <div className="relative z-20  w-full mt-20  md:mt-16 lg:mt-12">
-        <MobileNavHero />
-        <div className=" hidden md:flex flex-col items-center justify-center max-w-5xl mx-auto py-3">
- 
-    <nav className="bg-transparent relative w-full">
-      <ul className="flex items-center justify-center md:gap-x-4 lg:gap-x-6 w-full px-4 py-2">
-        {navigation.map((item, index) => (
-          <li key={index} className="text-neutral-100/80  cursor-pointer hover:text-blue-600 font-semibold text-base transition duration-300">
-            {item.name}
-          </li>
-        ))}
-      </ul>
+    
+    <nav className="relative z-20  w-full ">
+      <MobileNavHero />
+      <div
+        className=" hidden md:flex flex-row items-center h-min justify-between max-w-screen-xl mx-auto py-3 lg:px-4
+         md:px-3.5 px-3"
+      >
+        <div className=" flex items-center lg:gap-x-4 gap-x-4">
+          <ExtraSheet />
+          <div className=" h-[26px] relative w-px bg-white" />
+          <div className=" font-bold lg:text-4xl md:text-3xl text-3xl">
+            <h3 className=" text-white ">Gossipremier</h3>
+          </div>
+          <div className=" flex items-center justify-center h-full pt-2 ml-2 lg:ml-4 gap-x-5 ">
+            {navigation.map((item,idx)=>(
+              <div
+               key={idx}
+               className=" px-1 cursor-pointer "
+              >
+                <a href={item.href}>
+                <span className=" font-normal text-white">
+                  {item.name}
+                 </span>
+                </a>
+                
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <button className=" border-2 rounded-lg border-dotted bg-transparent hover:bg-slate-50/90 text-neutral-100
+           hover:text-slate-900 transition duration-300 px-6 py-2.5 cursor-pointer">
+              Subscribe
+          </button>
+        </div>
+      </div>
     </nav>
-  </div>
-    </div>
-   
-   
-  )
-}
+  );
+};

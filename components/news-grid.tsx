@@ -22,7 +22,7 @@ export const NewsGrid = ({
     </header>
 
     {/* Main Grid - Mobile-first grid system */}
-    <main className="container mx-auto lg:px-12 md:px-8 px-6 py-6 md:py-11">
+    <main className="max-w-6xl mx-auto lg:py-8">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
         {/* Left Column - Full width on mobile */}
         <div className="md:col-span-3 space-y-4">

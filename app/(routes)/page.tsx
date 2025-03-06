@@ -1,15 +1,15 @@
-
 import { BlogSection1 } from "@/components/blogs-section1";
 import { BlogSection2 } from "@/components/blog-section2";
 import { CategoryGrid } from "@/components/category-grid";
 import { EditorsPick } from "@/components/editors-pick";
 import { FeaturedStories } from "@/components/featured";
-import { Hero } from "@/components/hero";
+import HeroSection from "@/components/hero";
 import { NewsGrid } from "@/components/news-grid";
 import { Newsletter } from "@/components/newsletter";
 import { client } from "@/lib/sanity";
 import { PostType } from "@/types";
 import { MustRead } from "@/components/must-read";
+import { Trending } from "@/components/trending";
 
 const POSTS_QUERY = `*[
   _type == "post"]|order(publishedAt desc){
@@ -21,32 +21,30 @@ const POSTS_QUERY = `*[
   category->{title},
   author->{name, twitter, bio, image, email},
   excerpt
-  }`
-  const options = { next: { revalidate: 30 } };
+  }`;
+const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
   const posts = await client.fetch<PostType[]>(POSTS_QUERY, {}, options);
   // console.log(posts)
   return (
-   <>
-    <Hero />
-  
-        <FeaturedStories posts={posts}/>
-        <EditorsPick posts={posts}/>
-        <CategoryGrid posts={posts}/>
-        <Newsletter />   
-      
-      <NewsGrid posts={posts}/>
-      <BlogSection1 
-       blogPosts={posts}
-       tagline="Latest Posts"
-       heading="Topping the charts this week"
-       description=" The most popular posts on our platform this week. "
+    <>
+      <HeroSection />
+      <Trending />
+      <FeaturedStories posts={posts} />
+      <EditorsPick posts={posts} />
+      <CategoryGrid posts={posts} />
+      <Newsletter />
+
+      <NewsGrid posts={posts} />
+      <BlogSection1
+        blogPosts={posts}
+        tagline="Latest Posts"
+        heading="Topping the charts this week"
+        description=" The most popular posts on our platform this week. "
       />
-      <BlogSection2
-       posts= {posts}
-      />
-      <MustRead posts={posts}/>
-   </>
+      <BlogSection2 posts={posts} />
+      <MustRead posts={posts} />
+    </>
   );
 }

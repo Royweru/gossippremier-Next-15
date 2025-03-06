@@ -12,8 +12,8 @@ const RoutesLayout = ({
 }) => {
   return (
      <div className=' relative min-h-screen w-full'>
-      <TopHeader />
-         {/* <Navbar /> */}
+   
+         <Navbar />
           {children}
           <Footer />
      </div>
