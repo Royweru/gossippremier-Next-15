@@ -70,7 +70,7 @@ export const Footer = (props: Footer3Props) => {
   const [search, setSearch] = useState("");
   return (
     <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20 bg-black/90">
-      <div className="container">
+      <div className="container ">
         <div className=" w-full relative lg:mb-6 mb-4">
           <div className=" w-full">
             <input
