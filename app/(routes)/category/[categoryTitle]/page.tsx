@@ -1,36 +1,40 @@
-import { client } from '@/lib/sanity'
+import { client } from "@/lib/sanity";
+import CategoryDetailsClient from "./category-details-client";
 
-const options = {next:{revalidate:30}}
-const CategoryDetailsPage =async ({
-  params
-}:{
-  params:Promise<{categoryTitle:string}>
+const options = { next: { revalidate: 30 } };
+const CategoryDetailsPage = async ({
+  params,
+}: {
+  params: Promise<{ categoryTitle: string }>;
 }) => {
-   const POSTS_QUERY = `*[_type =="post" && category->title == $categoryTitle]{
+  const POSTS_QUERY = `*[_type =="post" && category->title == $categoryTitle]{
                       title,
                       publishedAt,
                       "currrentSlug":slug.current,
                       mainImage,
-                      "estimatedReadingTime":round(length(pt::text(body))/5/180)
-   }`
-   const posts = await client.fetch(POSTS_QUERY,await params,options)
-   
-   if(!posts) {
-    return(
-      <div className=' w-full h-full relative flex items-center justify-center'>
-           <div className=' font-semibold'>
-                <h4 className='text-3xl'>
-                   Currently we have no blogs in this category
-                </h4>
-           </div>
-      </div>
-    )
-   }
+                      "estimatedReadingTime":round(length(pt::text(body))/5/180),
+                      category->{title},
+                       author->{name, twitter, bio, image, email},
+   }`;
+  const posts = await client.fetch(POSTS_QUERY, await params, options);
+  
+  // if (!posts || posts.length ===0
+  // ) {
+  //   return (
+  //     <div className=" w-full h-full relative flex items-center justify-center">
+  //       <div className=" font-semibold">
+  //         <h4 className="text-3xl">
+  //           Currently we have no blogs in this category
+  //         </h4>
+  //       </div>
+  //     </div>
+  //   );
+  // }
   return (
-   <div className='w-full relative '>
-   First section
-   </div>
-  )
-}
+    <div className="w-full relative ">
+      <CategoryDetailsClient posts={posts} />
+    </div>
+  );
+};
 
-export default CategoryDetailsPage
+export default CategoryDetailsPage;

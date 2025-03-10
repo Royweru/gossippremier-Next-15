@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+import { CategoryHeader } from "@/components/category-header";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
@@ -21,7 +22,9 @@ const CategoryPageLayout = async ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-8">
+    <>
+    <CategoryHeader />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-8">
       <div className="flex flex-col md:flex-row gap-4">
         <div className=" md:w-2/3 ">{children}</div>
         <div className="md:w-1/3">
@@ -99,6 +102,8 @@ const CategoryPageLayout = async ({
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 
