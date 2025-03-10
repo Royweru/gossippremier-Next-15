@@ -9,32 +9,42 @@ import { MobileNavHero } from "./mobile-nav-hero";
 export const navigation = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
+ 
   {
-    name: "latest",
-    href: "#",
-  },
-  {
-    name: "Finance",
-    href: "#",
+    name: "Health",
+    href: "/category/Health",
   },
   {
     name: "Technology",
-    href: "#",
+    href: "/category/Technology",
   },
   {
     name: "Sports",
-    href: "#",
+    href: "/category/Sports",
   },
   {
     name: "Science",
-    href: "#",
+    href: "/category/Science",
   },
   {
-    name: "About",
-    href: "#",
+    name: "Business & Finance",
+    href: "/category/Finance",
   },
+  {
+    name: "Politics",
+    href: "/category/Politics",
+  },
+  // {
+  //   name: "Breaking news",
+  //   href: "/category/Breakingnews",
+  // },
+  {
+    name: "Entertainment",
+    href: "/category/Entertainment",
+  },
+  
 ];
 
 export const NavbarHero = () => {
@@ -52,14 +62,14 @@ export const NavbarHero = () => {
           <div className=" font-bold lg:text-4xl md:text-3xl text-3xl">
             <h3 className=" text-white ">Gossipremier</h3>
           </div>
-          <div className=" flex items-center justify-center h-full pt-2 ml-2 lg:ml-4 gap-x-5 ">
+          <div className=" flex items-center justify-center h-full pt-2 ml-2 lg:ml-4 gap-x-2 ">
             {navigation.map((item,idx)=>(
               <div
                key={idx}
                className=" px-1 cursor-pointer "
               >
                 <a href={item.href}>
-                <span className=" font-normal text-white">
+                <span className=" font-normal text-white text-sm hover:scale-105 hover:text-blue-600">
                   {item.name}
                  </span>
                 </a>

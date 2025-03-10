@@ -8,7 +8,7 @@ export const Navbar = () => {
   const pathname = usePathname();
   const [state, setState] = useState(false);
   const navRef = useRef<HTMLElement>(null);
-  const isHidden = pathname === "/";
+  const isHidden = pathname === "/" 
   // Navigation items
   // Replace javascript:void(0) path with your path
   const navigation = [
@@ -40,7 +40,7 @@ export const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className={`w-full top-8 z-20 bg-gray-900 ${isHidden ? "hidden" : ""} py-4`}
+      className={`w-full top-0 bg-gray-950 z-20 ${isHidden ? "hidden" : ""} py-4`}
     >
       <div className="items-center px-4 max-w-screen-xl mx-auto md:px-8 lg:flex">
         <div className="flex items-center justify-between py-3 lg:py-4 lg:block">

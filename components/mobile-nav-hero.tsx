@@ -8,14 +8,14 @@ export const MobileNavHero = () => {
 
   return (
     <div className='md:hidden relative w-full flex justity-between items-center'>
-      <div className=' font-semibold'>
-         <h4 className='text-3xl'>
+      <div className=' font-semibold mr-4'>
+         <h4 className='text-2xl text-white'>
           Gossipremier
          </h4>
       </div>
       <Sheet>
         <SheetTrigger>
-        <MenuIcon className=' size-10 text-neutral-100 cursor-pointer font-bold'/>
+        <MenuIcon className=' size-7 text-neutral-100 cursor-pointer font-bold'/>
         </SheetTrigger>
         <SheetContent side={"left"}>
            <div className=' h-full flex flex-col gap-y-4'>
