@@ -7,7 +7,7 @@ import Link from 'next/link'
 export const MobileNavHero = () => {
 
   return (
-    <div className='md:hidden relative w-full flex justity-between items-center'>
+    <div className='md:hidden relative w-full flex justity-between items-center ml-2'>
       <div className=' font-semibold mr-4'>
          <h4 className='text-2xl text-white'>
           Gossipremier
