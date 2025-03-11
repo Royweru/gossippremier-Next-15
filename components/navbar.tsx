@@ -25,18 +25,12 @@ const NavigationItems = [
     name: "Science",
     href: "/category/Science",
   },
-//   {
-//     name: "Business & Finance",
-//     href: "/category/Finance",
-//   },
+
   {
     name: "Politics",
     href: "/category/Politics",
   },
-  // {
-  //   name: "Breaking news",
-  //   href: "/category/Breakingnews",
-  // },
+
   {
     name: "Entertainment",
     href: "/category/Entertainment",
@@ -44,6 +38,14 @@ const NavigationItems = [
 ];
 
 const moreNavigationItems = [
+    {
+    name: "Breaking news",
+    href: "/category/Breakingnews",
+  },
+    {
+    name: "Business & Finance",
+    href: "/category/Finance",
+  },
   {
     name: "About",
     href: "/about",
