@@ -54,7 +54,7 @@ export const ExtraSheet = () => {
   return (
     <Sheet>
         <SheetTrigger>
-        <MenuIcon className=' size-7 text-neutral-100 cursor-pointer font-bold'/>
+        <MenuIcon className=' size-8  text-neutral-100 cursor-pointer font-bold'/>
         </SheetTrigger>
         <SheetContent side={"left"}>
            <div className=' h-full flex flex-col gap-y-4'>

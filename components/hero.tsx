@@ -3,7 +3,7 @@ import { NavbarHero } from './navbar-hero'; // Assuming this is imported correct
 
 export default function HeroSection() {
   return (
-    <div className="relative overflow-hidden h-screen w-full bg-cover bg-center rounded-b-md" style={{ backgroundImage: "url(/bg-hero.jpg)" }}>
+    <div className="relative overflow-hidden min-h-screen md:py-0 py-2 w-full bg-cover bg-center rounded-b-md" style={{ backgroundImage: "url(/bg-hero.jpg)" }}>
       <NavbarHero />
       
       {/* Gradient Overlay */}
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
           {/* Content Section - Right Side */}
           <div className="text-white text-center md:text-left">
-            <h1 className="lg:text-5xl md:text-3xl font-bold lg:mb-8 md:mb-6 mb-5 leading-tight">
+            <h1 className="lg:text-5xl md:text-3xl text-2xl md:py-0  font-bold lg:mb-8 md:mb-6 mb-5 leading-tight">
               Stay up to date with the latest updates
             </h1>
             <p className="text-base md:text-lg md:mb-6 mb-4 text-neutral-200 font-montserrat max-w-md mx-auto md:mx-0 font-normal leading-relaxed">
