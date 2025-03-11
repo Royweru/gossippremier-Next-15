@@ -70,7 +70,7 @@ export default function About() {
           <div className="md:w-1/2">
             <div className="relative h-80 md:h-full rounded-lg overflow-hidden shadow-lg">
               <Image 
-                src="/api/placeholder/800/600" 
+                src="/about1.jpg" 
                 alt="Glossier team working together" 
                 layout="fill"
                 objectFit="cover"

@@ -1,80 +1,141 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import Link from "next/link";
+import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
 
-// Add this style to your css file
+const NavigationItems = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Health",
+    href: "/category/Health",
+  },
+  {
+    name: "Technology",
+    href: "/category/Technology",
+  },
+  {
+    name: "Sports",
+    href: "/category/Sports",
+  },
+  {
+    name: "Science",
+    href: "/category/Science",
+  },
+//   {
+//     name: "Business & Finance",
+//     href: "/category/Finance",
+//   },
+  {
+    name: "Politics",
+    href: "/category/Politics",
+  },
+  // {
+  //   name: "Breaking news",
+  //   href: "/category/Breakingnews",
+  // },
+  {
+    name: "Entertainment",
+    href: "/category/Entertainment",
+  },
+];
 
-export const Navbar = () => {
+const moreNavigationItems = [
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
+
+export const Navbar= () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
-  const [state, setState] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-  const isHidden = pathname === "/" 
-  // Navigation items
-  // Replace javascript:void(0) path with your path
-  const navigation = [
-    { title: "Customers", path: "javascript:void(0)" },
-    { title: "Careers", path: "javascript:void(0)" },
-    { title: "Guides", path: "javascript:void(0)" },
-    { title: "Partners", path: "javascript:void(0)" },
-    { title: "Teams", path: "javascript:void(0)" },
-    { title: "Blog", path: "javascript:void(0)" },
-  ];
-
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const isHidden = pathname==='/'
+  // Close dropdown when clicking outside
   useEffect(() => {
-    const body = document.body;
-
-    // Disable scrolling
-    const customBodyStyle = ["overflow-hidden", "lg:overflow-visible"];
-    if (state) body.classList.add(...customBodyStyle);
-    // Enable scrolling
-    else body.classList.remove(...customBodyStyle);
-
-    // Sticky strick
-    const customStyle = ["sticky-nav", "fixed", "border-b"];
-    window.onscroll = () => {
-      if (window.scrollY > 80) navRef.current?.classList.add(...customStyle);
-      else navRef.current?.classList.remove(...customStyle);
+    const handleClickOutside = (event: { target: any; }) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
     };
-  }, [state]);
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+ 
   return (
-    <nav
-      ref={navRef}
-      className={`w-full top-0 bg-gray-950 z-20 ${isHidden ? "hidden" : ""} py-4`}
-    >
-      <div className="items-center px-4 max-w-screen-xl mx-auto md:px-8 lg:flex">
-        <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
-          {/* <a href="javascript:void(0)">
-            <img
-              src="https://www.floatui.com/logo.svg"
-              width={100}
-              height={50}
-              alt="Float UI logo"
-              className="brightness-0 invert" // Inverts logo color for dark background
-            />
-          </a> */}
-          <div className="lg:hidden">
-            <button
-              className="text-gray-300 outline-none p-2 rounded-md focus:border-gray-500 focus:border"
-              onClick={() => setState(!state)}
+    <header className={`bg-white shadow-sm ${isHidden && 'hidden'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 md:hidden"
+          >
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {state ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/">
+              <h1 className="text-3xl font-serif font-bold text-gray-800">
+                Gossippremier
+              </h1>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4">
+            {NavigationItems.map((item, idx) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  className={`${!isActive ? "text-gray-600 hover:text-gray-900" : "text-pink-500 hover:text-pink-700"}   text-sm font-medium cursor-pointer`}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              ) : (
+                  {item.name.toUpperCase()}
+                </Link>
+              );
+            })}
+
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium flex items-center"
+                onClick={toggleDropdown}
+              >
+                MORE
                 <svg
+                  className={`ml-1 h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -83,60 +144,129 @@ export const Navbar = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M4 8h16M4 16h16"
+                    d="M19 9l-7 7-7-7"
                   />
                 </svg>
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
+                  {moreNavigationItems.map((item, idx) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        className={`${
+                          !isActive ? "text-gray-600 hover:text-gray-900 hover:bg-gray-100" : "text-pink-500 hover:text-pink-700"
+                        } block px-4 py-2 text-sm font-medium`}
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
               )}
+            </div>
+          </nav>
+
+          {/* Right side icons */}
+          <div className="flex items-center">
+            <button className="ml-3 p-1 rounded-full text-gray-700 hover:text-gray-900 focus:outline-none">
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
             </button>
-          </div>
-        </div>
-        <div
-          className={`flex-1 justify-between flex-row-reverse lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${state ? "h-screen pb-20 overflow-auto pr-4" : "hidden"}`}
-        >
-          <div>
-            <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
-              <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
-                <a
-                  href="javascript:void(0)"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-              <li className="mt-4 lg:mt-0">
-                <a
-                  href="javascript:void(0)"
-                  className="py-3 px-4 text-center border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 rounded-md block lg:inline lg:border"
-                >
-                  Login
-                </a>
-              </li>
-              <li className="mt-8 lg:mt-0">
-                <a
-                  href="javascript:void(0)"
-                  className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline"
-                >
-                  Sign Up
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
-              {navigation.map((item, idx) => {
-                return (
-                  <li
-                    key={idx}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    <a href={item.path}>{item.title}</a>
-                  </li>
-                );
-              })}
-            </ul>
+            <Link
+              href="/subscribe"
+              className="ml-6 px-6 py-2 bg-red-500 text-white rounded-full text-sm font-medium"
+            >
+              Subscribe
+            </Link>
           </div>
         </div>
       </div>
-    </nav>
+
+      {/* Mobile menu, show/hide based on menu state */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {NavigationItems.map((item, idx) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  className={`${!isActive ? "text-gray-600 hover:text-gray-900" : "text-pink-500 hover:text-pink-700"} block px-3 py-2 text-sm font-medium cursor-pointer`}
+                >
+                  {item.name.toUpperCase()}
+                </Link>
+              );
+            })}
+            
+            {/* Mobile More dropdown */}
+            <div className="relative px-3 py-2">
+              <button 
+                className="text-gray-700 hover:text-gray-900 text-sm font-medium flex items-center w-full"
+                onClick={toggleDropdown}
+              >
+                MORE
+                <svg
+                  className={`ml-1 h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              
+              {/* Mobile Dropdown Items */}
+              {isDropdownOpen && (
+                <div className="mt-2 pl-4 space-y-1">
+                  {moreNavigationItems.map((item, idx) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        className={`${
+                          !isActive ? "text-gray-600 hover:text-gray-900" : "text-pink-500 hover:text-pink-700"
+                        } block py-2 text-sm font-medium`}
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          setIsMenuOpen(false);
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
