@@ -10,7 +10,7 @@ const CategoryDetailsClient = ({posts}:{
 }) => {
    const categoryTitle = posts[0]?.category?.title ||"ENTERTAINMENT"
   return (
-    <div className=" w-full space-y-2">
+    <div className=" w-full space-y-2 ">
        
       {/* Header */}
       <header className=" py-3 border-b">
@@ -23,6 +23,7 @@ const CategoryDetailsClient = ({posts}:{
           </div>
         </div>
       </header>
+      {/*content*/}
     <div className=" overflow-hidden border-b border-gray-900 flex flex-col w-full  last:border-0 relative sm:flex-row lg:py-4 md:py-3 py-2 ">
         <div className='sm:w-1/2 md:w-1/3 w-full'>
         <div className="relative sm:h-full h-[300px] w-full rounded-xl">
@@ -70,7 +71,8 @@ const CategoryDetailsClient = ({posts}:{
         />
       </div>
         </div>
-     
+        
+     {/*Trending now */}
       <div className="px-4 relative sm:w-1/2 md:w-2/3 w-full py-3">
         <div className="uppercase tracking-wide text-sm text-pink-500 font-semibold mb-2">
          {categoryTitle} 

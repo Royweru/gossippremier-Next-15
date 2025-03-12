@@ -7,7 +7,7 @@ const podcastsData = [
     id: 1,
     title: "The Art of Skincare: Beyond the Basics",
     description: "Beauty editor Maya Chen talks with dermatologist Dr. Sarah Williams about creating an effective skincare routine that actually works for your specific skin type.",
-    image: "/entertainment-1.jpg",
+    image: "/podcast1.jpeg",
     category: "BEAUTY",
     host: "Maya Chen",
     guest: "Dr. Sarah Williams",
@@ -20,7 +20,7 @@ const podcastsData = [
     id: 2,
     title: "Spring Fashion Trends: What's In and What's Out",
     description: "Fashion director Thomas Reid and stylist Zoe Parker discuss the biggest runway trends for Spring 2025 and how to incorporate them into your everyday wardrobe.",
-    image: "/entertainment2.jpg",
+    image: "/podcast2.jpg",
     category: "FASHION",
     host: "Thomas Reid",
     guest: "Zoe Parker",
@@ -46,7 +46,7 @@ const podcastsData = [
     id: 4,
     title: "Mindful Eating: Nutrition for Body and Soul",
     description: "Nutritionist Dr. James Lee and chef Olivia Santos explore the connection between food, mood, and overall wellbeing with practical tips for everyday meals.",
-    image: "/finance2.jpg",
+    image: "/podcast4.jpg",
     category: "LIFESTYLE",
     host: "Dr. James Lee",
     guest: "Olivia Santos",
@@ -98,14 +98,14 @@ const trendingPodcasts = [
 const PodcastPage = () => {
   const [activeCategory, setActiveCategory] = useState('ALL');
   
-  const categories = ['ALL', 'BEAUTY', 'FASHION', 'LIFESTYLE'];
+  const categories = ['ALL', 'SPORTS', 'ENTERTAINMENT', 'LIFESTYLE'];
   
   const filteredPodcasts = activeCategory === 'ALL' 
     ? podcastsData 
     : podcastsData.filter(podcast => podcast.category === activeCategory);
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 md:py-8 py-6">
       {/* Navigation */}
  
       

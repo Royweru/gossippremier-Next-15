@@ -23,7 +23,7 @@ const CategoryPageLayout = async ({
   return (
     <>
    
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12  mb-8 bg-gray-50">
       <div className="flex flex-col md:flex-row gap-4">
         <div className=" md:w-2/3 ">{children}</div>
         <div className="md:w-1/3">

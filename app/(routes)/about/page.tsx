@@ -37,7 +37,8 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 md:py-8 py-6">
+
     
 
       {/* Hero Section */}

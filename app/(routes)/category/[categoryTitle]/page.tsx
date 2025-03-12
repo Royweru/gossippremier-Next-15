@@ -31,7 +31,7 @@ const CategoryDetailsPage = async ({
   //   );
   // }
   return (
-    <div className="w-full relative ">
+    <div className="min-h-screen  md:py-8 py-6">
       <CategoryDetailsClient posts={posts} />
     </div>
   );

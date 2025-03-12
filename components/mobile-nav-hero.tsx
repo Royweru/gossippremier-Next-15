@@ -1,7 +1,7 @@
 import { MenuIcon } from 'lucide-react'
 import React from 'react'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
-import { navigation } from '@/lib/navigation'
+import { MobileNavigation } from '@/lib/navigation'
 import Link from 'next/link'
 
 export const MobileNavHero = () => {
@@ -19,7 +19,7 @@ export const MobileNavHero = () => {
         </SheetTrigger>
         <SheetContent side={"left"}>
            <div className=' h-full flex flex-col gap-y-4'>
-                  {navigation.map((item,idx)=>(
+                  {MobileNavigation.map((item,idx)=>(
 
                     <div
                      key={idx}

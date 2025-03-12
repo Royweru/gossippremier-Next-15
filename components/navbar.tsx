@@ -46,6 +46,14 @@ const moreNavigationItems = [
     name: "Business & Finance",
     href: "/category/Finance",
   },
+    {
+    name: "Podcast",
+    href: "/podcast",
+  },
+    {
+    name: "Videos",
+    href: "/videos",
+  },
   {
     name: "About",
     href: "/about",

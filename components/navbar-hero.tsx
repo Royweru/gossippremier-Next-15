@@ -2,7 +2,7 @@
 
 import { ExtraSheet } from "./extra-sheet";
 import { MobileNavHero } from "./mobile-nav-hero";
-import { navigation } from "@/lib/navigation";
+import { Navigation } from "@/lib/navigation";
 // import { useEffect, useRef, useState } from 'react'
 
 // Add this style to your css file
@@ -24,7 +24,7 @@ export const NavbarHero = () => {
             <h3 className=" text-white ">Gossipremier</h3>
           </div>
           <div className=" flex items-center justify-center h-full pt-2 ml-2 lg:ml-4 gap-x-2 ">
-            {navigation.map((item,idx)=>(
+            {Navigation.map((item,idx)=>(
               <div
                key={idx}
                className=" px-1 cursor-pointer "
