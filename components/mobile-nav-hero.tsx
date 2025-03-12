@@ -1,7 +1,7 @@
 import { MenuIcon } from 'lucide-react'
 import React from 'react'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
-import { navigation } from './navbar-hero'
+import { navigation } from '@/lib/navigation'
 import Link from 'next/link'
 
 export const MobileNavHero = () => {

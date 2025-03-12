@@ -2,50 +2,11 @@
 
 import { ExtraSheet } from "./extra-sheet";
 import { MobileNavHero } from "./mobile-nav-hero";
-
+import { navigation } from "@/lib/navigation";
 // import { useEffect, useRef, useState } from 'react'
 
 // Add this style to your css file
-export const navigation = [
-  {
-    name: "Home",
-    href: "/",
-  },
- 
-  {
-    name: "Health",
-    href: "/category/Health",
-  },
-  {
-    name: "Technology",
-    href: "/category/Technology",
-  },
-  {
-    name: "Sports",
-    href: "/category/Sports",
-  },
-  {
-    name: "Science",
-    href: "/category/Science",
-  },
-  {
-    name: "Business & Finance",
-    href: "/category/Finance",
-  },
-  {
-    name: "Politics",
-    href: "/category/Politics",
-  },
-  // {
-  //   name: "Breaking news",
-  //   href: "/category/Breakingnews",
-  // },
-  {
-    name: "Entertainment",
-    href: "/category/Entertainment",
-  },
-  
-];
+
 
 export const NavbarHero = () => {
   return (
