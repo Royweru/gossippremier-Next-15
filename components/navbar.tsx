@@ -3,6 +3,9 @@
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { IndividualPost } from "@/types";
+import SearchModal from "./search-modal";
+import { useSearhModalFilter } from "@/hooks/use-search-modal-filter";
 
 const NavigationItems = [
   {
@@ -64,12 +67,17 @@ const moreNavigationItems = [
   },
 ];
 
-export const Navbar= () => {
+export const Navbar= ({
+  posts
+}:{
+  posts:IndividualPost[]
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const isHidden = pathname==='/'
+  const {open} = useSearhModalFilter()
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: { target: any; }) => {
@@ -89,7 +97,9 @@ export const Navbar= () => {
   };
  
   return (
-    <header className={`bg-white shadow-sm ${isHidden && 'hidden'}`}>
+    <>
+    <SearchModal blogs={posts} />
+      <header className={`bg-white shadow-sm ${isHidden && 'hidden'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Mobile menu button */}
@@ -184,7 +194,11 @@ export const Navbar= () => {
 
           {/* Right side icons */}
           <div className="flex items-center">
-            <button className="ml-3 p-1 rounded-full text-gray-700 hover:text-gray-900 focus:outline-none">
+            <button 
+            className="ml-3 p-1 rounded-full text-gray-700
+             hover:text-gray-900 focus:outline-none"
+             onClick={open}
+             >
               <svg
                 className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -278,5 +292,7 @@ export const Navbar= () => {
         </div>
       )}
     </header>
+    </>
+  
   );
 };
