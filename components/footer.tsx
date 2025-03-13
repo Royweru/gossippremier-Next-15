@@ -8,7 +8,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { SearchIcon } from "lucide-react";
-import { useState } from "react";
+import { useSearhModalFilter } from "@/hooks/use-search-modal-filter";
 
 type ImageProps = {
   url?: string;
@@ -67,7 +67,7 @@ export const Footer = (props: Footer3Props) => {
     ...Footer3Defaults,
     ...props,
   };
-  const [search, setSearch] = useState("");
+  const { open } = useSearhModalFilter();
   return (
     <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20 bg-black/90">
       <div className="container ">
@@ -75,12 +75,15 @@ export const Footer = (props: Footer3Props) => {
           <div className=" w-full">
             <input
               placeholder="Search gossipremier"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onClick={open}
               className=" w-full p-4  border-slate-100/85 rounded-lg text-gray-900 
                 border  font-montserrat font-semibold"
             />
-            <button className=" absolute right-4 bottom-4 bg-transparent hover:bg-transparent cursor-pointer">
+            <button
+              onClick={open}
+              className=" absolute right-4 bottom-4
+             bg-transparent hover:bg-transparent cursor-pointer"
+            >
               <SearchIcon className=" size-5 font-bold text-accents-charcoalBlack " />
             </button>
           </div>
@@ -94,8 +97,12 @@ export const Footer = (props: Footer3Props) => {
             </div>
             <div className="rb-6 mb-6 md:mb-8 ">
               <div>
-                <p className="mb-1 text-sm font-semibold text-neutral-50">{address.label}</p>
-                <p className="mb-5 text-sm md:mb-6 text-neutral-50">{address.value}</p>
+                <p className="mb-1 text-sm font-semibold text-neutral-50">
+                  {address.label}
+                </p>
+                <p className="mb-5 text-sm md:mb-6 text-neutral-50">
+                  {address.value}
+                </p>
               </div>
               <div className=" text-neutral-50">
                 <p className="mb-1 text-sm font-semibold">{contact.label}</p>
@@ -117,7 +124,10 @@ export const Footer = (props: Footer3Props) => {
             {columnLinks.map((column, index) => (
               <ul key={index}>
                 {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex} className="py-2 text-white text-sm font-semibold">
+                  <li
+                    key={linkIndex}
+                    className="py-2 text-white text-sm font-semibold"
+                  >
                     <a href={link.url}>{link.title}</a>
                   </li>
                 ))}
