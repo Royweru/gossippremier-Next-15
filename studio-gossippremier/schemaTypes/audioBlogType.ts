@@ -14,6 +14,11 @@ export const audioBlogType = defineType({
               name: 'thumbnail',
               type: 'image',
             }),
+            defineField({
+                name: 'publishedAt',
+                type: 'datetime',
+                initialValue: () => new Date().toISOString(),
+              }),
         defineField({
                 name: 'slug',
                 type: 'slug',

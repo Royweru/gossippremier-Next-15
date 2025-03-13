@@ -23,6 +23,11 @@ export const videoBlogType = defineType({
         },
         validation: (rule) => rule.required(),
       }),
+      defineField({
+        name: 'publishedAt',
+        type: 'datetime',
+        initialValue: () => new Date().toISOString(),
+      }),
     defineField({
       title: 'Excerpt',
       name: 'excerpt',
