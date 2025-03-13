@@ -4,13 +4,13 @@ export const useSubscribeModal = ()=>{
     const[isOpen,setIsOpen] = useQueryState("subscribe-modal",
         parseAsBoolean.withDefault(false).withOptions({clearOnDefault:true})
     )
-    const open = () =>setIsOpen(true)
-    const close = () =>setIsOpen(false)
+    const subscribeModalOpen = () =>setIsOpen(true)
+    const subscribeModalclose = () =>setIsOpen(false)
 
     return{
         isOpen,
-        open,
-        close,
+        subscribeModalOpen,
+        subscribeModalclose,
         setIsOpen
     }
 }

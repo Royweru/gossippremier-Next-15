@@ -9,13 +9,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { motion, AnimatePresence } from "framer-motion"
+import { useSubscribeModal } from "@/hooks/use-subscribe-modal"
 
-interface SubscribeModalProps {
-  isOpen: boolean
-  onClose: () => void
-}
 
-export default function SubscribeModal({ isOpen, onClose }: SubscribeModalProps) {
+
+export default function SubscribeModal() {
+  const {subscribeModalclose,isOpen} = useSubscribeModal()
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -33,7 +32,7 @@ export default function SubscribeModal({ isOpen, onClose }: SubscribeModalProps)
       setTimeout(() => {
         setEmail("")
         setIsSuccess(false)
-        onClose()
+        subscribeModalclose()
       }, 2000)
     }, 1500)
   }
@@ -64,7 +63,7 @@ export default function SubscribeModal({ isOpen, onClose }: SubscribeModalProps)
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={onClose}
+                  onClick={subscribeModalclose}
                   className="text-white hover:bg-white/20 rounded-full"
                 >
                   <X className="h-5 w-5" />

@@ -1,5 +1,6 @@
 "use client";
 
+import { useSubscribeModal } from "@/hooks/use-subscribe-modal";
 import { ExtraSheet } from "./extra-sheet";
 import { MobileNavHero } from "./mobile-nav-hero";
 import { Navigation } from "@/lib/navigation";
@@ -9,6 +10,7 @@ import { Navigation } from "@/lib/navigation";
 
 
 export const NavbarHero = () => {
+  const {subscribeModalOpen} = useSubscribeModal()
   return (
     
     <nav className="relative z-20  w-full ">
@@ -41,8 +43,13 @@ export const NavbarHero = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <button className=" border-2 rounded-lg border-dotted bg-transparent hover:bg-slate-50/90 text-neutral-100
-           hover:text-slate-900 transition duration-300 px-6 py-2.5 cursor-pointer">
+          <button
+           className=" border-2 rounded-lg border-dotted 
+           bg-transparent hover:bg-slate-50/90 text-neutral-100
+           hover:text-slate-900 transition duration-300 px-6
+            py-2.5 cursor-pointer"
+            onClick={subscribeModalOpen}
+            >
               Subscribe
           </button>
         </div>

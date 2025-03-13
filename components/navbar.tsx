@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { IndividualPost } from "@/types";
 import SearchModal from "./search-modal";
 import { useSearhModalFilter } from "@/hooks/use-search-modal-filter";
+import { useSubscribeModal } from "@/hooks/use-subscribe-modal";
+import SubscribeModal from "./subsribe-modal";
 
 const NavigationItems = [
   {
@@ -73,6 +75,7 @@ export const Navbar= ({
   posts:IndividualPost[]
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const{subscribeModalOpen} = useSubscribeModal()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -98,6 +101,7 @@ export const Navbar= ({
  
   return (
     <>
+    <SubscribeModal  />
     <SearchModal blogs={posts} />
       <header className={`bg-white shadow-sm ${isHidden && 'hidden'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,12 +218,12 @@ export const Navbar= ({
                 />
               </svg>
             </button>
-            <Link
-              href="/subscribe"
+            <button
+              onClick={subscribeModalOpen}
               className="ml-6 px-6 py-2 bg-red-500 text-white rounded-full text-sm font-medium"
             >
               Subscribe
-            </Link>
+            </button>
           </div>
         </div>
       </div>

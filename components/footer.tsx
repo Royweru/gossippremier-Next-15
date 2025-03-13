@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { FaXTwitter } from "react-icons/fa6";
@@ -90,11 +91,11 @@ export const Footer = (props: Footer3Props) => {
         </div>
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20">
           <div>
-            <div className="rb-6 mb-6 md:mb-8">
+            {/* <div className="rb-6 mb-6 md:mb-8">
               <a href={logo.url}>
                 <img src={logo.src} alt={logo.alt} className="inline-block" />
               </a>
-            </div>
+            </div> */}
             <div className="rb-6 mb-6 md:mb-8 ">
               <div>
                 <p className="mb-1 text-sm font-semibold text-neutral-50">
@@ -153,8 +154,8 @@ export const Footer = (props: Footer3Props) => {
 
 export const Footer3Defaults: Props = {
   logo: {
-    url: "#",
-    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+    url: "/",
+    src: "/logo.png",
     alt: "Logo image",
   },
   address: {
@@ -169,20 +170,20 @@ export const Footer3Defaults: Props = {
   columnLinks: [
     {
       links: [
-        { title: "Link One", url: "#" },
-        { title: "Link Two", url: "#" },
-        { title: "Link Three", url: "#" },
-        { title: "Link Four", url: "#" },
-        { title: "Link Five", url: "#" },
+        { title: "About", url: "/about" },
+        { title: "Contact", url: "/contact" },
+        { title: "Videos", url: "/videos" },
+        { title: "Podcast", url: "/podcast" },
+        { title: "Trending", url: "/category/Entertainment" },
       ],
     },
     {
       links: [
-        { title: "Link Six", url: "#" },
-        { title: "Link Seven", url: "#" },
-        { title: "Link Eight", url: "#" },
-        { title: "Link Nine", url: "#" },
-        { title: "Link Ten", url: "#" },
+        { title: "Lifestyle", url: "/category/Lifestyle" },
+        { title: "Politics", url: "/category/Politics" },
+        { title: "Culture", url: "/category/Culture" },
+        { title: "Entertainment", url: "/category/Entertainment" },
+        { title: "Sports", url: "/category/Sports" },
       ],
     },
   ],

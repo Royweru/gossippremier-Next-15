@@ -85,5 +85,13 @@ export const MobileNavigation= [
       name: "Podcast",
       href: "/podcast",
     },
+    {
+      name: "About",
+      href: "/about",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
     
   ];
