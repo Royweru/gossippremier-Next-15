@@ -7,7 +7,11 @@ const POST_QUERY = `*[_type == "audioBlogPost" && slug.current == $audioSlug][0]
    publishedAt,
    slug,
    mainImage,
-   audio,
+  audio{
+          asset->{
+          _id,
+          url
+        },
      category->{title},
      author->{
       name
@@ -21,7 +25,7 @@ const AudioIdPage =async ({params}:{
   const post  = await client.fetch(POST_QUERY,await params,options)
   console.log(post)
   return (
-   <AudioPageIdClient />
+   <AudioPageIdClient audioBlog={post}/>
   )
 }
 

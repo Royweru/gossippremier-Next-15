@@ -69,12 +69,14 @@ export default function SearchModal({ blogs }: {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-background/80  backdrop-blur-sm flex items-start justify-center p-4 sm:p-6 md:p-8 overflow-y-auto "
+      className="fixed inset-0 z-50 bg-background/80  backdrop-blur-sm flex items-start justify-center 
+      p-4 sm:p-6 md:p-8 overflow-y-auto "
       onClick={handleClickOutside}
     >
       <div
         ref={modalRef}
-        className="bg-card w-full bg-gray-900 text-white max-w-2xl rounded-lg shadow-lg border p-4 max-h-[80vh] flex flex-col"
+        className="bg-card w-full bg-gray-900 text-white max-w-2xl rounded-lg
+         shadow-lg border p-4 max-h-[80vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-4">
@@ -102,7 +104,7 @@ export default function SearchModal({ blogs }: {
             <div className="space-y-4">
               {filteredPosts.map((post) => (
                 <div key={post._id} 
-                className="p-4 border rounded-md hover:bg-accent  hover:scale-105 hover:cursor-pointer"
+                className="p-4 border rounded-md hover:bg-accents-charcoalBlack  hover:scale-105 hover:cursor-pointer"
                 onClick={()=>router.push( `/blogs/${post.currentSlug}`)}
                 >
                   <h3 className="font-medium mb-1">{post.title}</h3>

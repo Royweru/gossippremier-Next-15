@@ -28,8 +28,10 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
           {posts[5].mainImage && (
             <>
               <img
-                src={ "/entertainment2.jpg"}
-                alt={posts[1].title}
+                src={ urlFor(posts[5]?.mainImage)?.url()
+                  || '/entertainment2.jpg'
+                }
+                alt={posts[5].title}
                 className="object-cover w-full h-full absolute -z-10"
               />
               {/* Gradient Overlay */}
@@ -39,17 +41,17 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
 
           <div className="relative p-8 h-full flex flex-col justify-end text-white">
               <span className="text-sm bg-zinc-700/90 text-white shadow-sm px-3 py-1 rounded-full w-fit ">
-                {posts[1].category.title}
+                {posts[5].category.title}
               </span>
            
-            <a href={`/blogs/${posts[0].currentSlug}`}>
+            <a href={`/blogs/${posts[5].currentSlug}`}>
             <h1 className="text-4xl font-bold mt-2 mb-4 hover:underline cursor-pointer">
-              {posts[1].title || "Want a Career in Technology?"}
+              {posts[5].title || "Want a Career in Technology?"}
             </h1>
             </a>
 
             <time className=" text-lg">
-              {new Date(posts[1].publishedAt).toLocaleDateString("en-us", {
+              {new Date(posts[5].publishedAt).toLocaleDateString("en-us", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
@@ -70,7 +72,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
               {posts[4]?.mainImage && (
           <Image
-            src={ "/science3.jpg"}
+            src={ urlFor(posts[4]?.mainImage)?.url() ||'/entertainment-1.jpg'}
             alt={posts[1].title}
             fill
             style={{ objectFit: "cover" }}
@@ -81,18 +83,18 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
 
             <div className="relative p-1.5 h-full flex w-full flex-col justify-between  text-gray-900">
               <span className="text-sm bg-sky-500/80 shadow-sm px-3 py-1 rounded-full text-white w-fit">
-          {posts[3]?.category?.title || "Technology"}
+          {posts[4]?.category?.title || "Technology"}
         
               </span>
-              <a href={`/blogs/${posts[1].currentSlug}`}>
+              <a href={`/blogs/${posts[4].currentSlug}`}>
           <h2 className="md:text-base  text-sm font-semibold hover:underline cursor-pointer">
-            {posts[3]?.title?.slice(0, 50) ||
+            {posts[4]?.title?.slice(0, 50) ||
               "15 Shocking Elon Musk Tweets"}
           </h2>
               </a>
 
               <time className="text-gray-500 text-sm italic">
-          {new Date(posts[1].publishedAt).toLocaleDateString("en-us", {
+          {new Date(posts[4].publishedAt).toLocaleDateString("en-us", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -104,10 +106,10 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
        {/*Second blog*/}
           <div className="  flex h-32 items-center justify-between w-full ">
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
-              {posts[2]?.mainImage && (
+              {posts[7]?.mainImage && (
           <Image
-            src={'/lifestyle2.jpg'}
-            alt={posts[2].title}
+            src={urlFor(posts[7]?.mainImage)?.url()||'/lifestyle2.jpg'}
+            alt={posts[7].title}
             fill
             style={{ objectFit: "cover" }}
             className="rounded-2xl"
@@ -117,17 +119,17 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
 
             <div className="relative p-1.5 h-full w-full flex flex-col justify-between text-gray-900">
               <span className="text-sm bg-pink-600/75 px-3 text-white py-1 rounded-full w-fit">
-          {posts[2]?.category?.title || "Technology"}
+          {posts[7]?.category?.title || "Technology"}
               </span>
-              <a href={`/blogs/${posts[2].currentSlug}`}>
+              <a href={`/blogs/${posts[7].currentSlug}`}>
           <h2 className="md:text-base  text-sm font-semibold cursor-pointer hover:underline ">
-            {posts[2]?.title?.slice(0, 50) ||
+            {posts[7]?.title?.slice(0, 50) ||
               "15 Shocking Elon Musk Tweets"}
           </h2>
               </a>
 
               <time className="text-gray-500 text-sm italic">
-          {new Date(posts[2].publishedAt).toLocaleDateString("en-us", {
+          {new Date(posts[7].publishedAt).toLocaleDateString("en-us", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -141,7 +143,7 @@ export const FeaturedStories = ({ posts }: { posts: PostType[] }) => {
             <div className=" h-32 md:w-1/2 w-full relative rounded-2xl overflow-hidden">
               {posts[3]?.mainImage && (
           <Image
-            src={ "/finance2.jpg"}
+            src={ urlFor(posts[3]?.mainImage)?.url()||"/business1.jpg"}
             alt={posts[3].title}
             fill
             style={{ objectFit: "cover" }}

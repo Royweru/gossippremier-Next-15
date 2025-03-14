@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { PlayCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export const WatchNowSection = () => {
   return (
@@ -11,7 +12,7 @@ export const WatchNowSection = () => {
       <div className="max-w-6xl mx-auto mb-8">
         <div className="flex justify-between items-center border-b border-gray-700 pb-4">
           <h2 className="text-4xl font-bold">Watch Now</h2>
-          <a href="#" className="text-sm hover:underline">View More</a>
+          <Link href="/videos" className="text-sm hover:underline">View More</Link>
         </div>
       </div>
       
@@ -71,7 +72,7 @@ export const WatchNowSection = () => {
     <div className="max-w-6xl mx-auto lg:px-0 md:px-4 px-5">
         <div className="flex relative w-full justify-between items-center border-b border-white pb-4 mb-12">
           <h2 className="text-4xl font-bold text-neutral-50">Podcasts</h2>
-          <a href="#" className="text-sm text-neutral-50 hover:underline">View More</a>
+          <Link href="/podcast" className="text-sm text-neutral-50 hover:underline">View More</Link>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

@@ -1,15 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import React, { useState } from 'react';
 import { Play, Pause } from 'lucide-react';
 
-const AudioPageIdClient = () => {
+const AudioPageIdClient = ({audioBlog}:{
+  audioBlog:any
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
     // Initialize audio when component mounts
-    setAudio(new Audio('/audio/audio1.mp3'));
+    setAudio(new Audio(audioBlog.audio.asset.url));
   }, []);
 
   // Sample podcast data
@@ -49,7 +53,7 @@ const AudioPageIdClient = () => {
   const togglePlayPause = () => {
     if (audio) {
       if (isPlaying) {
-        audio.pause();
+        audio.pause()
       } else {
         audio.play();
       }
