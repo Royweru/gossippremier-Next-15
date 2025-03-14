@@ -8,7 +8,7 @@ import React from "react";
 
 const CategoryDetailsClient = ({ posts }: { posts: any[] }) => {
   const categoryTitle = posts[0]?.category?.title || "ENTERTAINMENT";
-  console.log({categoryPosts:posts})
+  // console.log({categoryPosts:posts})
   if (!posts || posts.length === 0) {
     return (
       <div className=" w-full space-y-2 ">
